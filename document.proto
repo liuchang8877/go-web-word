@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package document;
+
+// 添加这行
+option go_package = "document/";
+
+service DocumentService {
+  rpc GenerateDocument (GenerateRequest) returns (GenerateResponse);
+}
+
+message GenerateRequest {
+  string title = 1;
+  string content = 2;
+}
+
+message GenerateResponse {
+  string download_url = 1;
+}
